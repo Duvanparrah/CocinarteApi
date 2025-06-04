@@ -4,6 +4,21 @@ const { validateSchema } = require("../middlewares/validator.middleware.js");
 const { loginSchema, registerSchema } = require("../schemas/auth.shema.js");
 const AuthMiddleware = require("../middlewares/auth.middleware.js");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//hooa
+
 const router = express.Router();
 
 // 🔹 Registro de usuario
