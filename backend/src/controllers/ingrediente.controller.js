@@ -7,7 +7,7 @@ class IngredientesPersonalizadosPlanController {
     try {
       const { id_plan, id_ingrediente } = req.body;
 
-      // Crear la relación en la base de datos
+      // Crear la relación en la base de datos ..fgg
       const nuevoIngredientePlan = await IngredientesPersonalizadosPlan.create({
         id_plan,
         id_ingrediente
