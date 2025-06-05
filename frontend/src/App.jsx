@@ -1,15 +1,12 @@
-import './App.css'
+import React from "react";
+import Login from "./components/login";
 
 function App() {
-
-
   return (
-    <>
-      <div class="bg-blue-500 text-white p-4">
-  ¡Hola, Tailwind!
-</div>
-    </>
-  )
+    <div>
+      <Login />
+    </div>
+  );
 }
 
-export default App
+export default App;
