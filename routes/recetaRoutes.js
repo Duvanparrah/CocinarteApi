@@ -1,11 +1,17 @@
 // routes/recetasRoutes.js
 const express = require('express');
 const router = express.Router();
-const RecetasController = require('../controller/recetasController');
 
-// Rutas para las recetas
-router.get('/recetas', RecetasController.obtenerTodas);
-router.post('/recetas', RecetasController.crearReceta);
-router.get('/recetas/buscar', RecetasController.buscarPorNombre);
+const { crearReceta, obtenerRecetas, subirImagen } = require('../controller/recetaController');
+const errorHandler = require('../middleware/errorHandler');
+const upload = require('../middleware/uploadMiddleware'); // multer
+
+// Rutas
+router.post('/', upload.single('foto'), crearReceta); // Crear receta con imagen
+router.get('/', obtenerRecetas);                      // Obtener todas las recetas
+router.post('/subir-imagen', upload.single('foto'), subirImagen); // Subir solo imagen
+
+// Middleware para manejo de errores (al final)
+router.use(errorHandler);
 
 module.exports = router;
